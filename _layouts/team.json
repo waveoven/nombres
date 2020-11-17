@@ -1,0 +1,15 @@
+{% assign members = site.data.team %}
+{% assign n = members.size | minus: 1 %}
+{
+  "people": [
+    {% for i in (0..n) %}
+    {
+      "name": "{{ members[i].name }}"
+      {% if i == n %}
+    }
+      {% else %}
+    },
+      {% endif %}
+    {% endfor %}
+  ]
+}
